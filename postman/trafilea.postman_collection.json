@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "29e28ec3-bc61-43d5-b72a-19334313ce34",
+		"name": "trafilea",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19053418"
+	},
+	"item": [
+		{
+			"name": "print numbers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"start\":1,\r\n    \"end\":15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/numbers/print",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"numbers",
+						"print"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save number",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": 15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/numbers/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"numbers",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get number",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": 15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/numbers/get/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"numbers",
+						"get",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAll",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": 15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/numbers/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"numbers",
+						"get"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
