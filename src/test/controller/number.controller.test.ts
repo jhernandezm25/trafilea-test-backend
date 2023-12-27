@@ -35,10 +35,20 @@ describe('NumbersController', function () {
     expect(collection).not.to.be.null;
   });
 
-  it('should show  1 to 100', () => {
+  it('should show  1 to 5', () => {
     const consoleSpy = sinon.spy(console, 'log');
 
     numbersController.printNumbers(1,5);
+
+    expect(consoleSpy.called).to.be.true;
+
+    consoleSpy.restore();
+  });
+
+  it('should show  1 to 100', () => {
+    const consoleSpy = sinon.spy(console, 'log');
+
+    numbersController.printNumbers(undefined,undefined);
 
     expect(consoleSpy.called).to.be.true;
 
