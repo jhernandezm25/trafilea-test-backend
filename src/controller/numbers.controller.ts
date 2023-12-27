@@ -1,4 +1,6 @@
-class NumbersController {
+import { TypeCalculator } from '../interfaces/typeCalculator.interface'
+
+class NumbersController implements TypeCalculator {
   private static instance: NumbersController
   private types: (string | number)[] = ['Type 2', 'Type 1', 'Type 3']
   private numbersCollection: { [key: number]: string | number } = {}
@@ -21,7 +23,7 @@ class NumbersController {
   }
 
   saveNumber(number: number): number {
-    this.numbersCollection[number] = this.calculateType(number);
+    this.numbersCollection[number] = this.calculateType(number)
     console.log(this.numbersCollection)
     return number
   }
@@ -33,9 +35,12 @@ class NumbersController {
     return this.numbersCollection
   }
 
-  private calculateType(i: number): string | number {
-    const type = ((i % 3 === 0) as unknown as number) * 2 + ((i % 5 === 0) as unknown as number) - 1;
-    return  this.types[type] || i
+  calculateType(i: number): string | number {
+    const type =
+      ((i % 3 === 0) as unknown as number) * 2 +
+      ((i % 5 === 0) as unknown as number) -
+      1
+    return this.types[type] || i
   }
 }
 
