@@ -1,12 +1,10 @@
 import 'mocha'
-import * as sinon from 'sinon';
 import { expect } from 'chai';
 import NumbersController from '../../controller/numbers.controller'; // Ajusta la ruta según tu estructura
-
+const sinon = require('sinon');
 
 describe('NumbersController', function () {
   let numbersController: NumbersController;
-  let consoleLogStub: sinon.SinonStub;
   beforeEach(function () {
     numbersController = NumbersController.getInstance(); // Instancia directa en lugar de getInstance
   });
@@ -37,5 +35,14 @@ describe('NumbersController', function () {
     expect(collection).not.to.be.null;
   });
 
+  it('should show  1 to 100', () => {
+    const consoleSpy = sinon.spy(console, 'log');
+
+    numbersController.printNumbers(1,5);
+
+    expect(consoleSpy.called).to.be.true;
+
+    consoleSpy.restore();
+  });
  
 });
