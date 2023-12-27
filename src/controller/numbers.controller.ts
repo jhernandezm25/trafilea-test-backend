@@ -33,9 +33,9 @@ class NumbersController {
     return this.numbersCollection
   }
 
-  private calculateType(number: number): string | number {
-    const type = (number % 3 === 0 ? 2 : 0) + (number % 5 === 0 ? 1 : 0) - 1
-    return type !== -1 ? this.types[type] : number
+  private calculateType(i: number): string | number {
+    const type = ((i % 3 === 0) as unknown as number) * 2 + ((i % 5 === 0) as unknown as number) - 1;
+    return type !== -1 ? this.types[type] : i
   }
 }
 
